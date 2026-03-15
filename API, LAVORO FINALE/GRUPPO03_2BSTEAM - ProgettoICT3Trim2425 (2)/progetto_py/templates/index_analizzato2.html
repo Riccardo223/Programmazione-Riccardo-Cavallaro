@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Risultato Geolocalizzazione</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}" />
+</head>
+
+<body class="{{ regione }}">
+  <div class="contenuto">
+    <h1>Risultato dell'analisi</h1>
+    <h2>Testo originale della poesia:</h2>
+    <pre>{{ poesia }}</pre>
+
+    <h2>Geolocalizzazione</h2>
+    <p><strong>Regione trovata:</strong> {{ regione_nome }}</p>
+
+    <!-- Bottoni finali sotto i testi -->
+    <div class="bottoni-container">
+      <form action="{{ url_for('pagina_2') }}" method="post">
+        <input type="hidden" name="poesia" value="{{ poesia }}">
+        <button type="submit">INDIETRO</button>
+      </form>
+
+      <form action="{{ url_for('pagina_iniziale') }}" method="post">
+        <button type="submit">PAGINA INIZIALE</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

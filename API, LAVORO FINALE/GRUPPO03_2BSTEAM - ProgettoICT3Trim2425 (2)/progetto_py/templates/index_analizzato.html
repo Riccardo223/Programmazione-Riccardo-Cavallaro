@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Risultato Analisi Poesia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}" />
+</head>
+<body>
+  <h1>Risultato dell'analisi</h1>
+  <br>
+
+  <h2>Testo originale della poesia:</h2>
+  <pre>{{ poesia }}</pre>
+  <br>
+
+  <h2>Conteggio parole:</h2>
+  <p>{{ conteggio }}</p>
+  <br>
+
+  <h2>Parole ripetute:</h2>
+  {% for parola, frequenza in risultati.items() %}
+    <p><strong>{{ parola }}</strong>: {{ frequenza }} volte</p>
+  {% endfor %}
+  <br>
+
+  <h2>Conteggio sillabe totale:</h2>
+  <p>{{ sillabe_totali }}</p>
+  <br>
+
+  <h2>Poesia con versi e sillabe (endecasillabi evidenziati):</h2>
+  <p>{{ poesia_evidenziata | safe }}</p>
+  <br>
+
+  <div class="bottoni-container">
+    <form action="{{ url_for('pagina_iniziale') }}" method="post">
+      <button type="submit">PAGINA INIZIALE</button>
+    </form>
+
+    <form action="{{ url_for('pagina_3') }}" method="post">
+      <input type="hidden" name="poesia" value="{{ poesia }}">
+      <button type="submit">AVANTI</button>
+    </form>
+  </div>
+</body>
+</html>
+

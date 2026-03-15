@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analizzatore di Poesie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Analizzatore di Poesie</h1>
+    <p>Inserisci la tua poesia qui sotto per scoprire la sua bellezza nascosta:</p>
+  <form action="{{url_for('pagina_2')}}" method="post">
+    <textarea name="poesia" placeholder="Scrivi o incolla qui la tua poesia..."></textarea>
+    <a href="{{ url_for('pagina_2') }}">
+    <button>Analizza poesia</button>
+    </a>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+/* Stile generale pagina */
+body {
+  background-color: #b3d9ff; /* azzurro pastello */
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  margin: 30px auto;
+  max-width: 700px;
+  padding: 20px;
+  box-sizing: border-box;
+  line-height: 1.6;
+  position: relative; /* per il ::before */
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 10px;    /* distanza dal bordo esterno */
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 4px solid white;  /* colore e spessore del secondo bordo */
+  pointer-events: none;     /* evita che blocchi il clic del mouse */
+  z-index: 1;
+}
+
+/* Titoli */
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #064273; /* blu scuro */
+}
+
+h2 {
+  color: #0a4c8c; /* blu un po’ meno scuro */
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #0a4c8c;
+  padding-bottom: 5px;
+}
+
+/* Paragrafo con testo normale */
+p {
+  background-color: #e6f0ff; /* azzurro chiaro */
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+}
+
+/* Preformattato testo poesia */
+pre {
+  background-color: #f0f8ff; /* azzurro ancora più chiaro */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  font-size: 1.1rem;
+  white-space: pre-wrap; /* va a capo automaticamente */
+  line-height: 1.5;
+}
+
+/* Pulsante */
+button {
+  background-color: #0a4c8c; /* blu scuro */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+  margin-top: 30px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Rimuovo display:block e margini centrati da button
+   perché i bottoni saranno affiancati nel contenitore flex */
+button:hover {
+  background-color: #064273; /* blu ancora più scuro */
+  transform: scale(1.07);
+}
+
+/* Evidenziazione versi endecasillabi (se usi <mark>) */
+mark {
+  background-color: #a0d8f0; /* azzurro chiaro */
+  color: #064273;
+  padding: 0 5px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* Link dentro bottone (rimuovo stile link) */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Contenitore dei bottoni - posizione orizzontale */
+.bottoni-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding: 0 10px; /* un po’ di spazio ai lati */
+  max-width: 700px; /* stesso max-width del body */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.bottoni-container form {
+  margin: 0; /* rimuovo margini dei form */
+  /* se vuoi puoi aggiungere flex: 1 per fare i bottoni più larghi */
+}
+
+/* TUTTO il CSS che hai già scritto */
+
+body {
+  background-color: #b3d9ff; /* azzurro pastello */
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  margin: 30px auto;
+  max-width: 700px;
+  padding: 20px;
+  box-sizing: border-box;
+  line-height: 1.6;
+  position: relative; /* per il ::before */
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 10px;    /* distanza dal bordo esterno */
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 4px solid white;  /* colore e spessore del secondo bordo */
+  pointer-events: none;     /* evita che blocchi il clic del mouse */
+  z-index: 1;
+}
+
+/* ...altro tuo CSS... */
+
+/* --- Aggiunte finali per colori dinamici per regione --- */
+body.liguria {
+  background-color: #d0e8f2; /* azzurro chiaro Liguria */
+}
+body.liguria::before {
+  border-color: #0a5a9a; /* blu Liguria */
+}
+
+body.toscana {
+  background-color: #f8e6d1; /* beige chiaro Toscana */
+}
+body.toscana::before {
+  border-color: #b36b00; /* marrone Toscana */
+}
+
+body.veneto {
+  background-color: #e4f0db; /* verde pastello Veneto */
+}
+body.veneto::before {
+  border-color: #588235; /* verde scuro Veneto */
+}
+
+body.friuli-venezia-giulia {
+  background-color: #f0d9e8; /* rosa pastello Friuli-Venezia Giulia */
+}
+body.friuli-venezia-giulia::before {
+  border-color: #a83270; /* viola Friuli-Venezia Giulia */
+}
