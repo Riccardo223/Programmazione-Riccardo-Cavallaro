@@ -1,7 +1,0 @@
-0 felice
-1 triste
-2 arrabiato
-3 rilassato
-4 energico
-5 romantico
-6 ansioso
